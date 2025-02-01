@@ -14,7 +14,7 @@ function calculate(a: number, b: number, callback: (result: number) => void) {
 calculate(5, 10, (result) => {
     console.log("Sum:", result);
 });
-function fetchData(callback: (error: string | null, data?: string) => void) {
+function fetchData1(callback: (error: string | null, data?: string) => void) {
     setTimeout(() => {
         const success = Math.random() > 0.5; 
         if (success) {
@@ -25,7 +25,7 @@ function fetchData(callback: (error: string | null, data?: string) => void) {
     }, 1000);
 }
 
-fetchData((error, data) => {
+fetchData1((error, data) => {
     if (error) {
         console.error(error);
     } else {
