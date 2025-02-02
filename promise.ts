@@ -25,3 +25,16 @@ function fetchData(): Promise<string> {
 fetchData()
     .then((data) => console.log(data))
     .catch((error) => console.error(error));
+
+
+    async function fetchDataAsync(): Promise<void> {
+        try {
+          const result = await fetchData();
+          console.log(result);
+        } catch (error) {
+          console.error(error);
+        }
+      }
+      
+      fetchDataAsync();
+      
