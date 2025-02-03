@@ -37,4 +37,23 @@ fetchData()
       }
       
       fetchDataAsync();
+
+      function step1(): Promise<string> {
+        return new Promise((resolve) => setTimeout(() => resolve("Step 1 complete"), 1000));
+      }
+      
+      function step2(previousResult: string): Promise<string> {
+        return new Promise((resolve) => setTimeout(() => resolve(previousResult + " -> Step 2 complete"), 1000));
+      }
+      
+      function step3(previousResult: string): Promise<string> {
+        return new Promise((resolve) => setTimeout(() => resolve(previousResult + " -> Step 3 complete"), 1000));
+      }
+      
+      step1()
+        .then(step2)
+        .then(step3)
+        .then(console.log)
+        .catch(console.error);
+      
       
